@@ -53,12 +53,12 @@ class SandwichMachine:
     def process_coins(self):
         """Returns the total calculated from coins inserted.
            Hint: include input() function here, e.g. input("how many quarters?: ")"""
-        largeDollars = int(input("How many large dollars?: "))
-        halfDollars = int(input("How many half dollars?: "))
+        largedollars = int(input("How many large dollars?: "))
+        halfdollars = int(input("How many half dollars?: "))
         quarters = int(input("How many quarters?: "))
         nickels = int(input("How many nickels?: "))
 
-        total = largeDollars * 1.00 + halfDollars * 0.50 + quarters * 0.25 + nickels * 0.05
+        total = largedollars * 1.00 + halfdollars * 0.50 + quarters * 0.25 + nickels * 0.05
         return total
 
     def transaction_result(self, coins, cost):
@@ -86,7 +86,7 @@ class SandwichMachine:
         """Function that will create a report of all ingredients"""
         print(f"Bread: {self.machine_resources['bread']} slice(s) left.")
         print(f"Ham: {self.machine_resources['ham']} slice(s) left.")
-        print(f"Cheese: {self.machine_resources['cheese']} slice(s) left.")
+        print(f"Cheese: {self.machine_resources['cheese']} ounces left.")
 
 ### Make an instance of SandwichMachine class and write the rest of the codes ###
 
@@ -102,7 +102,7 @@ def main():
         elif choice == "report":
             machine.report()
         elif choice in ["small", "medium", "large"]:
-            sandwich = recipes[choice];
+            sandwich = recipes[choice]
             if machine.check_resources(sandwich["ingredients"]):
                 print("Please insert coins.")
                 coins_inserted = machine.process_coins()
